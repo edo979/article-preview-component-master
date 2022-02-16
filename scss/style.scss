@@ -16,5 +16,65 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Manrope', sans-serif;
+  background-color: $Light-Grayish-Blue;
+}
+
+.card {
+  min-width: 330px;
+  margin: 75px 25px;
+  border-radius: 15px;
+  background-color: white;
+  overflow: hidden;
+
+  &-header {
+    img {
+      width: 100%;
+    }
+  }
+
+  &-body {
+    padding: 40px 30px;
+    color: $Very-Dark-Grayish-Blue;
+    .header {
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+    }
+    .text {
+      font-size: 1.1rem;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px 30px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+      border-radius: 50%;
+      background-color: $Light-Grayish-Blue;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+
+      &-info {
+        margin-left: 20px;
+      }
+    }
+  }
 }
