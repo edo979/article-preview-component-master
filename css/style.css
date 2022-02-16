@@ -33,7 +33,14 @@ body {
   overflow: hidden;
 }
 
+@media (min-width: 769px) {
+  .card {
+    max-width: 730px;
+  }
+}
+
 .card-header img {
+  display: block;
   width: 100%;
 }
 
@@ -52,7 +59,7 @@ body {
   color: #6d7f97;
 }
 
-.card-footer {
+.card-body-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,11 +69,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 30px 30px;
+  margin: 35px 0 0;
   font-size: 1.1rem;
 }
 
-.card-footer .user {
+.card-body-footer .user {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,26 +82,26 @@ body {
           align-items: center;
 }
 
-.card-footer .user img {
+.card-body-footer .user img {
   width: 40px;
   border-radius: 50%;
 }
 
-.card-footer .user-info {
+.card-body-footer .user-info {
   margin-left: 20px;
   line-height: 1.5;
 }
 
-.card-footer .user-info .username {
+.card-body-footer .user-info .username {
   font-weight: 700;
   color: #48556a;
 }
 
-.card-footer .user-info .date {
+.card-body-footer .user-info .date {
   color: #9eafc2;
 }
 
-.card-footer .share-btn {
+.card-body-footer .share-btn {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -102,6 +109,6 @@ body {
   background-color: #ecf2f8;
 }
 
-.card-footer .share-btn img {
+.card-body-footer .share-btn img {
   width: 100%;
 }
