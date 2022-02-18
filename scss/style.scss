@@ -34,6 +34,7 @@ body {
   overflow: hidden;
 
   &-header {
+    overflow: hidden;
     img {
       display: block;
       width: 100%;
@@ -42,7 +43,7 @@ body {
   }
 
   &-body {
-    padding: 40px 30px;
+    padding: 40px 30px 30px;
     color: $Very-Dark-Grayish-Blue;
     .header {
       margin-bottom: 25px;
@@ -56,9 +57,10 @@ body {
     // body footer with user info
     // and share button
     &-footer {
+      position: relative;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: end;
       margin: 35px 0 0;
       font-size: 1.1rem;
 
@@ -86,15 +88,56 @@ body {
         }
       }
 
-      .share-btn {
+      .share {
         width: 30px;
         height: 30px;
-        border-radius: 50%;
-        padding: 5px 7px 7px;
-        background-color: $Light-Grayish-Blue;
+        z-index: 2;
 
-        img {
-          width: 100%;
+        &.active {
+          background-color: $Desaturated-Dark-Blue;
+
+          .social-links {
+            display: flex;
+            left: -30px;
+            top: -10px;
+            width: calc(100% + 60px);
+            height: 100px;
+            padding: 30px 35px;
+            background-color: $Very-Dark-Grayish-Blue;
+            color: $Grayish-Blue;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            z-index: -1;
+
+            img {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              margin-left: 15px;
+            }
+          }
+
+          .share-btn {
+            background-color: $Grayish-Blue;
+
+            svg path {
+              fill: $Light-Grayish-Blue;
+            }
+          }
+        }
+
+        .social-links {
+          position: absolute;
+          display: none;
+        }
+
+        &-btn {
+          padding: 8px 0 0 8px;
+          border-radius: 50%;
+          background-color: $Light-Grayish-Blue;
+          svg {
+            width: 100%;
+          }
         }
       }
     }
@@ -104,13 +147,16 @@ body {
     display: flex;
     align-items: center;
     max-width: 730px;
+    overflow: visible;
 
     &-header {
       align-self: stretch;
       min-width: 285px;
 
       img {
+        border-radius: 15px 0 0 15px;
         object-fit: cover;
+        object-position: 25%;
       }
     }
 
@@ -119,6 +165,44 @@ body {
 
       .header {
         font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      &-footer {
+        margin-top: 20px;
+
+        .share {
+          position: relative;
+          &.active {
+            background-color: white;
+            .social-links {
+              height: auto;
+              width: auto;
+              display: flex;
+              top: -100px;
+              left: 0px;
+              padding: 20px 35px;
+            }
+          }
+          .social-links {
+            padding: 20px 35px;
+            border-radius: 15px;
+            transform: translateX(-50%);
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -15px;
+              left: calc(50% - 5px);
+              width: 0;
+              height: 0;
+              border-left: 15px solid transparent;
+              border-right: 15px solid transparent;
+
+              border-top: 15px solid $Very-Dark-Grayish-Blue;
+            }
+          }
+        }
       }
     }
   }
